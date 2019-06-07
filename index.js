@@ -31,6 +31,7 @@ app.use(authMiddleware(secret));
 
 //model
 const {Burger} = require('./models/Burger.js')
+const {Breakfast} = require('./models/Breakfast.js')
 
 // Registrar rutas
 // routes(app, (err) => {
@@ -46,6 +47,28 @@ app.get('/burgers', (req, res) => {
       res.send(burgers)
   })
   })
+
+  app.get('/breakfast', (req, res) => {
+    Breakfast.find({}, (err, breakfast) => {
+        res.send(breakfast)
+    })
+    })
+
+    app.post('/burgers/nuevo', (req, res) => {
+      //a. Capturar los datos del req
+      const nuevoBurger = new Burger(req.body);
+      console.log(nuevoBurger)
+      //b. insertarlos a la colección de la base de datos
+      nuevoBurger.save((err, datos) => {
+          if (err){
+              return err;
+          }
+          res.send(datos);
+      });
+  //res.send("la ruta funciona")
+  });
+
+
 
   // Registro de "middleware" que maneja posibles errores
   app.use(errorHandler);
