@@ -30,50 +30,53 @@ app.use(express.json());
 app.use(authMiddleware(secret));
 
 //model
-const {Burger} = require('./models/Burger.js')
-const {Breakfast} = require('./models/Breakfast.js')
+//const {Burger} = require('./models/Burger.js')
+//const {Breakfast} = require('./models/Breakfast.js')
 
-// Registrar rutas
-// routes(app, (err) => {
-//   if (err) {
-//     throw err;
-//   }
-// });
+//Registrar rutas
+routes(app, (err) => {
+  if (err) {
+    throw err;
+  }
+
+ // Registro de "middleware" que maneja posibles errores
+ app.use(errorHandler);
+
+ app.listen(port, () => console.log(`App listening on port ${port}`));
 
 
-
-app.get('/burgers', (req, res) => {
-  Burger.find({}, (err, burgers) => {
-      res.send(burgers)
-  })
-  })
-
-  app.get('/breakfast', (req, res) => {
-    Breakfast.find({}, (err, breakfast) => {
-        res.send(breakfast)
-    })
-    })
-
-    app.post('/burgers/nuevo', (req, res) => {
-      //a. Capturar los datos del req
-      const nuevoBurger = new Burger(req.body);
-      console.log(nuevoBurger)
-      //b. insertarlos a la colección de la base de datos
-      nuevoBurger.save((err, datos) => {
-          if (err){
-              return err;
-          }
-          res.send(datos);
-      });
-  //res.send("la ruta funciona")
-  });
+});
 
 
 
-  // Registro de "middleware" que maneja posibles errores
-  app.use(errorHandler);
+// app.get('/burgers', (req, res) => {
+//   Burger.find({}, (err, burgers) => {
+//       res.send(burgers)
+//   })
+//   })
 
-  app.listen(port, () => console.log(`App listening on port ${port}`));
+//   app.get('/breakfast', (req, res) => {
+//     Breakfast.find({}, (err, breakfast) => {
+//         res.send(breakfast)
+//     })
+//     })
 
+//     app.post('/burgers/nuevo', (req, res) => {
+//       //a. Capturar los datos del req
+//       const nuevoBurger = new Burger(req.body);
+//       console.log(nuevoBurger)
+//       //b. insertarlos a la colección de la base de datos
+//       nuevoBurger.save((err, datos) => {
+//           if (err){
+//               return err;
+//           }
+//           res.send(datos);
+//       });
+//   //res.send("la ruta funciona")
+//   });
+
+
+
+ 
 
 
