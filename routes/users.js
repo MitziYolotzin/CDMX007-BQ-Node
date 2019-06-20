@@ -56,7 +56,8 @@ const initAdminUser = (app, next) => {
  * 
  * Es por lo anterior que siempre veremos los argumentos request, response y
  * next en nuestros middlewares y rutas. Cada una de estas funciones tendrá
- * la oportunidad de acceder a la consulta (request) y hacerse cargo de enviar
+ * la oportunidad de acceder a la consulta (reque
+ * st) y hacerse cargo de enviar
  * una respuesta (rompiendo la cadena), o delegar la consulta a la siguiente
  * función en la cadena (invocando next). De esta forma, la petición (request)
  * va pasando a través de las funciones, así como también la respuesta
@@ -126,6 +127,8 @@ module.exports = (app, next) => {
 
     User.create({ email, password })
       .then(doc => resp.json(omitPrivateProps(doc)))
+    
+
       .catch(err => (
         (/duplicate key/.test(err.message))
           ? next(403)
@@ -154,6 +157,8 @@ module.exports = (app, next) => {
   app.delete('/users/:uid', requireAuth, (req, resp, next) => {
     req.user.remove()
       .then(doc => resp.json(omitPrivateProps(doc)))
+     
+
       .catch(next);
   });
 

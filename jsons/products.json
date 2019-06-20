@@ -1,0 +1,101 @@
+[
+
+    {
+        "name": "Sandwich de jamón y queso",
+        "price": 35,
+        "menu": "breakfast"
+
+    },
+    {
+        "name": "Jugo Natural",
+        "price": 15,
+        "menu": "breakfast"
+
+    },
+    {
+        "name": "Café Americano",
+        "price": 20,
+        "menu": "breakfast"
+
+    },
+    {
+        "name": "Café con leche",
+        "price": 28,
+        "menu": "breakfast"
+
+    },
+
+    {
+
+        "name": "Sencilla Res",
+        "price": 40,
+        "menu": "burgers"
+
+    },
+    {
+
+        "name": "Doble Res",
+        "price": 55,
+        "menu": "burgers"
+    },
+    {
+
+        "name": "Sencilla Pollo",
+        "price": 40,
+        "menu": "burgers"
+
+    },
+    {
+
+        "name": "Doble Pollo",
+        "price": 55,
+        "menu": "burgers"
+
+    },
+    {
+
+        "name": "Sencilla Vegetariana",
+        "price": 40,
+        "menu": "burgers"
+
+    },
+    {
+
+        "name": "Doble Vegetariana",
+        "price": 55,
+        "menu": "burgers"
+
+    },
+
+    {
+        
+        "name": "Refresco",
+        "price": 15,
+        "menu": "drinks"
+
+    },
+    {
+        
+        "name": "Agua",
+        "price": 10,
+        "menu": "drinks"
+
+    },
+
+    {
+
+        "name": "Papas a la francesa",
+        "price": 15,
+        "menu": "additional"
+
+    },
+    {
+        "name": "Aros de Cebolla",
+        "price": 15,
+        "menu": "additional"
+
+
+    }
+
+
+]

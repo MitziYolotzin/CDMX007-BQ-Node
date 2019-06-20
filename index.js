@@ -18,16 +18,17 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true },  (er
   }
   console.log("conectado a mongo")
 });
-
-
+mongoose.set('useFindAndModify', false);
 
 
 app.set('config', config);
 app.set('pkg', pkg);
 
+//MIDDLEWARES
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use(authMiddleware(secret));
+
 
 //model
 //const {Burger} = require('./models/Burger.js')
@@ -41,7 +42,8 @@ routes(app, (err) => {
 
  // Registro de "middleware" que maneja posibles errores
  app.use(errorHandler);
-
+ 
+//PORT
  app.listen(port, () => console.log(`App listening on port ${port}`));
 
 
