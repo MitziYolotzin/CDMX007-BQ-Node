@@ -16,7 +16,7 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true },  (er
   if (err){
       return err
   }
-  console.log("conectado a mongo")
+  console.log("connected to mongo")
 });
 mongoose.set('useFindAndModify', false);
 
