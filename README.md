@@ -392,15 +392,15 @@ puedes ejecutarlo con `npm run deploy`.
 
 #### `/products`
 
-* [ ] `GET /products`
-* [ ] `GET /products/:productid`
-* [ ] `POST /products`
-* [ ] `PUT /products/:productid`
-* [ ] `DELETE /products/:productid`
+* [x] `GET /products`
+* [x] `GET /products/:productid`
+* [x] `POST /products`
+* [x] `PUT /products/:productid`
+* [x] `DELETE /products/:productid`
 
 #### `/orders`
 
-* [ ] `GET /orders`
+* [x] `GET /orders`
 * [ ] `GET /orders/:orderid`
 * [ ] `POST /orders`
 * [ ] `PUT /orders/:orderid`
